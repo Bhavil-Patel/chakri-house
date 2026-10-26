@@ -77,7 +77,7 @@ export function WhyChakriHouse() {
             return (
               <article
                 key={item.id}
-                className="group relative flex flex-col items-center justify-between rounded-[2rem] bg-white p-6 px-4 min-[361px]:p-5 min-[361px]:px-1.5 sm:p-8 sm:px-6 md:py-11 md:px-7 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(19,63,43,0.18)]"
+                className="group relative flex flex-col items-center justify-between rounded-[20px] sm:rounded-[2rem] bg-white p-6 px-4 min-[361px]:p-5 min-[361px]:px-1.5 sm:p-8 sm:px-6 md:py-11 md:px-7 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(19,63,43,0.18)]"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="flex flex-col items-center">
