@@ -86,7 +86,9 @@ export function WhyChakriHouse() {
                     <div
                       className={cn(
                         "grid size-20 place-items-center rounded-full transition-transform duration-300 group-hover:scale-105",
-                        item.tone === "sage" ? "bg-[#dcefe4] text-[#133F2B]" : "bg-[#fae7db] text-[#c06847]"
+                        item.tone === "sage"
+                          ? "bg-[#dcefe4] text-[#133F2B]"
+                          : "bg-[#fae7db] text-[#c06847]",
                       )}
                       aria-hidden="true"
                     >
@@ -107,7 +109,7 @@ export function WhyChakriHouse() {
                 <span
                   className={cn(
                     "mt-8 inline-block h-1 w-9 rounded-full transition-all duration-300 group-hover:w-12",
-                    item.tone === "sage" ? "bg-[#133F2B]" : "bg-[#c06847]"
+                    item.tone === "sage" ? "bg-[#133F2B]" : "bg-[#c06847]",
                   )}
                   aria-hidden="true"
                 />

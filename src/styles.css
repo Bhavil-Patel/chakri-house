@@ -45,38 +45,42 @@
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.977 0.011 85);        /* #FBF7EF cream */
-  --foreground: oklch(0.27 0.02 150);         /* #202C24 */
+  --background: oklch(0.977 0.011 85); /* #FBF7EF cream */
+  --foreground: oklch(0.27 0.02 150); /* #202C24 */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.27 0.02 150);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.27 0.02 150);
-  --primary: oklch(0.33 0.06 160);            /* #123D2B */
-  --primary-deep: oklch(0.25 0.05 160);       /* #09291D */
-  --primary-soft: oklch(0.47 0.08 155);       /* #286747 */
+  --primary: oklch(0.33 0.06 160); /* #123D2B */
+  --primary-deep: oklch(0.25 0.05 160); /* #09291D */
+  --primary-soft: oklch(0.47 0.08 155); /* #286747 */
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.94 0.017 140);         /* sage #E7EFE5 */
+  --secondary: oklch(0.94 0.017 140); /* sage #E7EFE5 */
   --secondary-foreground: oklch(0.33 0.06 160);
-  --muted: oklch(0.91 0.03 80);               /* beige #EDE1CE */
-  --muted-foreground: oklch(0.52 0.02 150);   /* #69736A */
-  --accent: oklch(0.82 0.15 80);              /* saffron #F4B82C */
+  --muted: oklch(0.91 0.03 80); /* beige #EDE1CE */
+  --muted-foreground: oklch(0.52 0.02 150); /* #69736A */
+  --accent: oklch(0.82 0.15 80); /* saffron #F4B82C */
   --accent-foreground: oklch(0.25 0.05 160);
   --saffron: oklch(0.82 0.15 80);
-  --terracotta: oklch(0.62 0.12 40);          /* #C96C4B */
+  --terracotta: oklch(0.62 0.12 40); /* #C96C4B */
   --sage: oklch(0.94 0.017 140);
   --beige: oklch(0.91 0.03 80);
-  --whatsapp: oklch(0.76 0.19 150);           /* #25D366 */
+  --whatsapp: oklch(0.76 0.19 150); /* #25D366 */
   --whatsapp-foreground: oklch(0.25 0.05 160);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0.013 85);              /* #E5E0D6 */
+  --border: oklch(0.9 0.013 85); /* #E5E0D6 */
   --input: oklch(0.9 0.013 85);
   --ring: oklch(0.47 0.08 155);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -85,8 +89,18 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.1; letter-spacing: -0.01em; }
-  :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
 }
 
 @utility container-site {
@@ -95,11 +109,15 @@
   margin-inline: auto;
   padding-inline: clamp(1rem, 4vw, 2rem);
 }
-@utility text-hero { font-size: clamp(2.4rem, 5.5vw, 4.6rem); }
-@utility text-section { font-size: clamp(1.8rem, 3.4vw, 2.75rem); }
+@utility text-hero {
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+}
+@utility text-section {
+  font-size: clamp(1.8rem, 3.4vw, 2.75rem);
+}
 
 @utility reveal {
-  animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both;
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @utility float-slow {
   animation: floaty 9s ease-in-out infinite;
@@ -108,9 +126,32 @@
   animation: spin 40s linear infinite;
 }
 
-@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }

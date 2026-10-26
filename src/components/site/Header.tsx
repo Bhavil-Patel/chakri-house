@@ -21,7 +21,14 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("sticky top-0 z-40 border-b transition-colors duration-300", scrolled ? "border-border bg-background/95 backdrop-blur" : "border-transparent bg-background/70 backdrop-blur-sm")}>
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border bg-background/95 backdrop-blur"
+          : "border-transparent bg-background/70 backdrop-blur-sm",
+      )}
+    >
       <div className="container-site flex h-16 items-center justify-between gap-4 md:h-20">
         <Logo />
         <nav className="hidden items-center gap-8 md:flex" aria-label="Main">
@@ -40,7 +47,9 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <CallButton className="px-3 sm:px-5 inline-flex" />
-          <WhatsAppButton variant="primary" className="hidden sm:inline-flex">Order</WhatsAppButton>
+          <WhatsAppButton variant="primary" className="hidden sm:inline-flex">
+            Order
+          </WhatsAppButton>
           <WhatsAppButton variant="primary" className="px-3 sm:hidden" children="Order" />
         </div>
       </div>
@@ -50,7 +59,10 @@ export function Header() {
 
 export function MobileNav() {
   return (
-    <nav aria-label="Mobile" className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
+    <nav
+      aria-label="Mobile"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden"
+    >
       <div className="grid grid-cols-3">
         {NAV.map((n) => (
           <Link

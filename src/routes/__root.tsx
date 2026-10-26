@@ -75,26 +75,44 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+import { SITE_URL, canonicalUrl } from "../lib/site";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Chakri House" },
-      { name: "description", content: "Homemade Indian snacks. Traditional Taste. Homemade with Love." },
-      { property: "og:type", content: "website" },
+      { name: "theme-color", content: "#123D2B" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      { title: "Chakri House — Authentic Gujarati Farsan & Homemade Snacks" },
+      {
+        name: "description",
+        content:
+          "Authentic homemade Gujarati farsan, fresh namkeen, butter chakri, and traditional Indian snacks. Made fresh in 100% pure groundnut oil. Order directly on WhatsApp.",
+      },
       { property: "og:site_name", content: "Chakri House" },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: `${SITE_URL}/favicon.png` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE_URL}/favicon.png` },
     ],
     links: [
+      { rel: "canonical", href: canonicalUrl("/") },
       {
         rel: "stylesheet",
         href: appCss,
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap",
+      },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
     scripts: [
       {
@@ -102,15 +120,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify([
           {
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "FoodEstablishment",
+            "@id": `${SITE_URL}/#organization`,
             name: "Chakri House",
+            url: SITE_URL,
+            logo: `${SITE_URL}/favicon.png`,
+            image: `${SITE_URL}/favicon.png`,
             slogan: "Traditional Taste. Homemade with Love.",
+            description:
+              "Authentic homemade Gujarati farsan, traditional snacks, and namkeen prepared fresh in 100% pure groundnut oil.",
             telephone: "+919979961576",
+            priceRange: "₹₹",
+            servesCuisine: ["Gujarati", "Indian"],
+            address: {
+              "@type": "PostalAddress",
+              addressRegion: "Gujarat",
+              addressCountry: "IN",
+            },
+            areaServed: [
+              { "@type": "AdministrativeArea", name: "Gujarat" },
+              { "@type": "Country", name: "India" },
+            ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: "+919979961576",
+              contactType: "customer service",
+              areaServed: "IN",
+              availableLanguage: ["English", "Gujarati", "Hindi"],
+            },
           },
           {
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
             name: "Chakri House",
+            url: SITE_URL,
+            inLanguage: "en-IN",
           },
         ]),
       },
@@ -143,7 +188,9 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Header />
-      <main><Outlet /></main>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
       <MobileNav />
     </QueryClientProvider>

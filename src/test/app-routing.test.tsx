@@ -14,4 +14,19 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("matches dedicated product route /products/butter-chakari", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    const matches = router.matchRoutes("/products/butter-chakari");
+
+    expect(matches.at(-1)?.routeId).toBe("/products/$id");
+  });
+
+  it("matches festivals and journal routes", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+
+    expect(router.matchRoutes("/festivals").at(-1)?.routeId).toBe("/festivals");
+    expect(router.matchRoutes("/journal").at(-1)?.routeId).toBe("/journal/");
+  });
 });

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as FestivalsRouteImport } from './routes/festivals'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
+import { Route as ProductsIdRouteImport } from './routes/products.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,17 +35,24 @@ const JournalSlugRoute = JournalSlugRouteImport.update({
   path: '/journal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsIdRoute = ProductsIdRouteImport.update({
+  id: '/products/$id',
+  path: '/products/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/festivals': typeof FestivalsRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/products/$id': typeof ProductsIdRoute
   '/journal/': typeof JournalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/festivals': typeof FestivalsRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/products/$id': typeof ProductsIdRoute
   '/journal': typeof JournalIndexRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,29 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/festivals': typeof FestivalsRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/products/$id': typeof ProductsIdRoute
   '/journal/': typeof JournalIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/festivals' | '/journal/$slug' | '/journal/'
+  fullPaths:
+    '/' | '/festivals' | '/journal/$slug' | '/products/$id' | '/journal/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/festivals' | '/journal/$slug' | '/journal'
-  id: '__root__' | '/' | '/festivals' | '/journal/$slug' | '/journal/'
+  to: '/' | '/festivals' | '/journal/$slug' | '/products/$id' | '/journal'
+  id:
+    | '__root__'
+    | '/'
+    | '/festivals'
+    | '/journal/$slug'
+    | '/products/$id'
+    | '/journal/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FestivalsRoute: typeof FestivalsRoute
   JournalSlugRoute: typeof JournalSlugRoute
+  ProductsIdRoute: typeof ProductsIdRoute
   JournalIndexRoute: typeof JournalIndexRoute
 }
 
@@ -99,6 +116,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JournalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/$id': {
+      id: '/products/$id'
+      path: '/products/$id'
+      fullPath: '/products/$id'
+      preLoaderRoute: typeof ProductsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -106,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FestivalsRoute: FestivalsRoute,
   JournalSlugRoute: JournalSlugRoute,
+  ProductsIdRoute: ProductsIdRoute,
   JournalIndexRoute: JournalIndexRoute,
 }
 export const routeTree = rootRouteImport

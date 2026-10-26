@@ -9,18 +9,42 @@ export const btn = {
   outline: "border border-primary text-primary hover:bg-primary hover:text-primary-foreground",
   whatsapp: "bg-whatsapp text-whatsapp-foreground hover:brightness-95",
   light: "bg-background text-primary hover:bg-saffron",
-  ghostLight: "border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10",
+  ghostLight:
+    "border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10",
 };
 
-export function WhatsAppButton({ message, className, children = "Order on WhatsApp", variant = "whatsapp" }: { message?: string; className?: string; children?: ReactNode; variant?: keyof typeof btn }) {
+export function WhatsAppButton({
+  message,
+  className,
+  children = "Order on WhatsApp",
+  variant = "whatsapp",
+}: {
+  message?: string;
+  className?: string;
+  children?: ReactNode;
+  variant?: keyof typeof btn;
+}) {
   return (
-    <a href={waLink(message)} target="_blank" rel="noopener noreferrer" className={cn(btn.base, btn[variant], className)}>
+    <a
+      href={waLink(message)}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(btn.base, btn[variant], className)}
+    >
       <MessageCircle className="size-4" /> {children}
     </a>
   );
 }
 
-export function CallButton({ className, variant = "outline", children = "Call Now" }: { className?: string; variant?: keyof typeof btn; children?: ReactNode }) {
+export function CallButton({
+  className,
+  variant = "outline",
+  children = "Call Now",
+}: {
+  className?: string;
+  variant?: keyof typeof btn;
+  children?: ReactNode;
+}) {
   return (
     <a href={telLink()} className={cn(btn.base, btn[variant], className)}>
       <Phone className="size-4" /> {children}
