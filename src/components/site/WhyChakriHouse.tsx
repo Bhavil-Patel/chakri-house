@@ -71,13 +71,13 @@ export function WhyChakriHouse() {
         </div>
 
         {/* 4 Crisp White Feature Cards */}
-        <div className="relative mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6 md:mt-14">
+        <div className="relative mt-12 grid grid-cols-1 gap-4 min-[361px]:grid-cols-2 min-[361px]:gap-3 sm:gap-6 lg:grid-cols-4 md:mt-14">
           {WHY_CHAKARI_HOUSE_FEATURES.map((item, index) => {
             const Icon = ICON_MAP[item.iconName];
             return (
               <article
                 key={item.id}
-                className="group relative flex flex-col items-center justify-between rounded-[2rem] bg-white p-8 sm:px-6 md:py-11 md:px-7 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(19,63,43,0.18)]"
+                className="group relative flex flex-col items-center justify-between rounded-[2rem] bg-white p-6 px-4 min-[361px]:p-5 min-[361px]:px-1.5 sm:p-8 sm:px-6 md:py-11 md:px-7 text-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_32px_-8px_rgba(19,63,43,0.18)]"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 <div className="flex flex-col items-center">
@@ -85,7 +85,7 @@ export function WhyChakriHouse() {
                   <div className="mb-6">
                     <div
                       className={cn(
-                        "grid size-20 place-items-center rounded-full transition-transform duration-300 group-hover:scale-105",
+                        "grid size-18 min-[361px]:size-15 sm:size-20 place-items-center rounded-full transition-transform duration-300 group-hover:scale-105",
                         item.tone === "sage"
                           ? "bg-[#dcefe4] text-[#133F2B]"
                           : "bg-[#fae7db] text-[#c06847]",
@@ -96,11 +96,11 @@ export function WhyChakriHouse() {
                     </div>
                   </div>
 
-                  <h3 className="font-display text-xl font-semibold leading-snug text-[#133F2B] sm:text-[22px]">
+                  <h3 className="font-display text-lg min-[361px]:text-base sm:text-[22px] font-semibold leading-snug text-[#133F2B]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2.5 text-[14px] leading-relaxed text-[#455c50] max-w-[210px]">
+                  <p className="mt-2.5 text-[14px] leading-relaxed text-[#455c50] max-w-[260px] min-[361px]:max-w-[210px] sm:max-w-none">
                     {item.description}
                   </p>
                 </div>
