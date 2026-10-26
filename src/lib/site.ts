@@ -31,8 +31,8 @@ export const telLink = () => `tel:+${isConfigured(PHONE_NUMBER) ? PHONE_NUMBER :
 
 /* ---------- Site URL configuration for canonical URLs and SEO ---------- */
 export const SITE_URL = (
-  typeof import.meta !== "undefined" && import.meta.env?.VITE_SITE_URL
-    ? import.meta.env.VITE_SITE_URL
+  typeof import.meta !== "undefined" && import.meta.env?.["VITE_SITE_URL"]
+    ? String(import.meta.env["VITE_SITE_URL"])
     : "https://chakrihouse.com"
 ).replace(/\/+$/, "");
 
