@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 import { CallButton, WhatsAppButton } from "./Buttons";
 
 export const NAV = [
-  { label: "Our Dessert", to: "/", hash: "products", icon: Cookie },
+  { label: "Our Specialties", to: "/", hash: "products", icon: Cookie },
   { label: "Festivals", to: "/festivals", icon: Sparkles },
   { label: "Journal", to: "/journal", icon: BookOpen },
 ] as const;

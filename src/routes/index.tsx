@@ -72,7 +72,7 @@ function Index() {
 
       {/* Products */}
       <section id="products" className="container-site scroll-mt-24 py-16 md:py-24">
-        <SectionHeading eyebrow="Our Dessert" title="Made for Every Munching Moment" intro="Explore our range of familiar favourites and irresistible crunch." />
+        <SectionHeading eyebrow="Our Specialties" title="Made for Every Munching Moment" intro="Explore our range of familiar favourites and irresistible crunch." />
         <div className="mt-10"><ProductGrid /></div>
       </section>
 

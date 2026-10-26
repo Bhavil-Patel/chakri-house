@@ -15,7 +15,7 @@ export function Footer() {
         <div>
           <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Explore</h3>
           <ul className="mt-4 space-y-3 text-[15px]">
-            <li><FooterLink to="/" hash="products">Our Dessert</FooterLink></li>
+            <li><FooterLink to="/" hash="products">Our Specialties</FooterLink></li>
             <li><FooterLink to="/festivals">Festivals</FooterLink></li>
             <li><FooterLink to="/journal">Journal</FooterLink></li>
           </ul>

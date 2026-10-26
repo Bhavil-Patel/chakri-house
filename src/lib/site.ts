@@ -8,6 +8,7 @@ import mamraPauvaChevdo from "@/assets/mamra-pauva-chevdo.png";
 import naylonPauvaChevdo from "@/assets/naylon-pauva-chevdo.png";
 import jiniSev from "@/assets/jini-sev.png";
 import nylonBananaWafers from "@/assets/nylon-banana-wafers.png";
+import nylonMasalaBananaWafers from "@/assets/nylon-masala-banana-wafers.png";
 import livePotatoChips from "@/assets/live-potato-chips.png";
 import chips from "@/assets/chips.jpg";
 import kitchen from "@/assets/kitchen.jpg";
@@ -52,6 +53,7 @@ export const PRODUCTS: Product[] = [
   { id: "naylon-pauva-chevdo", name: "Naylon Pauva Chevdo", price: 110, pack: "250g", image: naylonPauvaChevdo, flavours: [], description: "Thin, feather-light pauva chevdo." },
   { id: "jini-sev", name: "Jini Sev", price: 120, pack: "250g", image: jiniSev, flavours: [], description: "Fine, delicate sev with a melt-away crunch." },
   { id: "nylon-banana-wafers", name: "Nylon Banana Wafers", price: 100, pack: "200g", image: nylonBananaWafers, flavours: [], description: "Paper-thin banana wafers, crisp and golden." },
+  { id: "nylon-masala-banana-wafers", name: "Nylon Masala Banana Wafers", price: 100, pack: "200g", image: nylonMasalaBananaWafers, flavours: [], description: "Crispy banana wafers tossed in a flavorful blend of aromatic spices." },
   { id: "live-potato-chips", name: "Live Potato Chips", price: 100, pack: "200g", image: livePotatoChips, flavours: [], description: "Thin potato chips with a clean, simple crunch." },
 ];
 
